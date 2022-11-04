@@ -1,7 +1,6 @@
 import React from "react";
 import "./ClientCard.css";
 import PrimaryButton from "../PrimaryButton/PrimaryButton";
-import _ from "lodash";
 
 const ClientCard = ({
 	onRemove,
