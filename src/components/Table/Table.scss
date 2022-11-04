@@ -1,0 +1,38 @@
+@use "../../styles/" as *;
+
+$border: 1px solid black;
+
+.Table {
+	width: 100%;
+	border: $border;
+	border-collapse: collapse;
+
+	.Table__header-item {
+		border: $border;
+		font-size: 2rem;
+		text-transform: uppercase;
+		color: white;
+	}
+	.Table__header-row {
+		height: 3rem;
+		background-color: black;
+	}
+	.Table__row {
+		height: 2rem;
+		cursor: pointer;
+
+		&:hover {
+			background-color: $light;
+		}
+	}
+	.Table__row--selected {
+		background-color: $grey;
+		&:hover {
+			background-color: $light;
+		}
+	}
+	.Table__item {
+		border: $border;
+		font-size: 1.5rem;
+	}
+}

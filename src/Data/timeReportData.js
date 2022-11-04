@@ -1,0 +1,42 @@
+export const timeReportData = [
+	{
+		id: 1,
+		timeIn: "10:00",
+		timeOut: "11:00",
+		duration: "1 hour, 0 min",
+		client: "Angel Accessories",
+		remarks: "VAT Exemption",
+	},
+	{
+		id: 2,
+		timeIn: "10:00",
+		timeOut: "11:00",
+		duration: "1 hour, 0 min",
+		client: "Angel Accessories",
+		remarks: "VAT Exemption",
+	},
+	{
+		id: 3,
+		timeIn: "10:00",
+		timeOut: "11:00",
+		duration: "1 hour, 0 min",
+		client: "Angel Accessories",
+		remarks: "VAT Exemption",
+	},
+	{
+		id: 4,
+		timeIn: "10:00",
+		timeOut: "11:00",
+		duration: "1 hour, 0 min",
+		client: "Angel Accessories",
+		remarks: "VAT Exemption",
+	},
+	{
+		id: 5,
+		timeIn: "10:00",
+		timeOut: "11:00",
+		duration: "1 hour, 0 min",
+		client: "Angel Accessories",
+		remarks: "VAT Exemption",
+	},
+];

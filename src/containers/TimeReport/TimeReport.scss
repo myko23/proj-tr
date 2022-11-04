@@ -1,0 +1,20 @@
+@use "../../styles/" as *;
+
+.TimeReport {
+	@include fitBox();
+	@include displayFlex(1rem, column);
+	.TimeReport__header-section {
+		@include displayFlex(1.5rem, row);
+		align-items: center;
+
+		.TimeReport__header {
+			margin-right: 10rem;
+		}
+		.TimeReport__button {
+			font-size: 1.5rem;
+		}
+	}
+	.TimeReport__table-container {
+		@include fitBox();
+	}
+}

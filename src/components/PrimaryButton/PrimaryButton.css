@@ -1,0 +1,23 @@
+.PrimaryButton {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0.2rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  font-weight: 1000;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: rgb(168, 168, 168);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.PrimaryButton:hover {
+  background-color: rgb(203, 201, 201);
+}/*# sourceMappingURL=PrimaryButton.css.map */

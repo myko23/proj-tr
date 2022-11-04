@@ -1,0 +1,43 @@
+.Clients {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: center;
+}
+.Clients .Clients__content {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.Clients .Clients__content .Clients__input-form {
+  width: 100rem;
+}
+.Clients .Clients__content .Clients__input-form .Clients__input {
+  margin-top: 1rem;
+}
+.Clients .Clients__content .Clients__input-form .Clients__input input {
+  width: 100%;
+}
+.Clients .Clients__content .Clients__input-form .Clients__button-set {
+  margin-top: 3rem;
+}
+.Clients .Clients__content .Clients__input-form .Client__message {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  color: rgb(255, 0, 0);
+}
+.Clients .Clients__content .Clients__client-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow: auto;
+  padding-top: 2rem;
+  width: 100%;
+  height: 100%;
+}/*# sourceMappingURL=Clients.css.map */

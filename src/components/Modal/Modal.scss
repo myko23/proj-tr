@@ -1,0 +1,9 @@
+@use "../../styles/" as *;
+
+.Modal {
+	@include fitBox("screen");
+	@include displayFlex(0, column, center);
+	position: fixed;
+	top: 0;
+	left: 0;
+}

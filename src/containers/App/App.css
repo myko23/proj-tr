@@ -1,0 +1,10 @@
+.App {
+  background-color: rgb(168, 168, 168);
+  min-height: 100vh;
+}
+.App .App__content {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding: 5rem;
+}/*# sourceMappingURL=App.css.map */

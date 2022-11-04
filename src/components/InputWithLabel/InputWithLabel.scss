@@ -1,0 +1,24 @@
+@use "../../styles/" as *;
+
+.InputWithLabel {
+	.InputWithLabel__label {
+		font-size: 1rem;
+		font-weight: bold;
+		margin-left: 0.5rem;
+	}
+	.InputWithLabel__input {
+		outline: none;
+		font-size: 2rem;
+		padding: 0.2rem 1rem;
+		border-radius: 5px;
+		width: 100%;
+	}
+	.InputWithLabel__date {
+		outline: none;
+		font-size: 2rem;
+		width: 100%;
+		.react-time-picker__wrapper {
+			border-radius: 5px;
+		}
+	}
+}

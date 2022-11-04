@@ -1,0 +1,43 @@
+@use "../../styles/" as *;
+
+.AddTR {
+	height: 43%;
+	width: 40%;
+	background-color: $white;
+	border: 1px solid black;
+	padding: 2rem;
+
+	@include displayFlex(0, column);
+	align-items: center;
+
+	.AddTR__input-set {
+		@include displayFlex(1rem, column);
+		width: 100%;
+
+		.AddTR__date {
+			font-size: 2rem;
+			width: fit-content;
+		}
+
+		.AddTR__input {
+			input,
+			select,
+			textarea {
+				width: 100%;
+			}
+			textarea {
+				resize: none;
+			}
+		}
+	}
+	.AddTR__button-set {
+		@include displayFlex(2rem, row);
+		justify-content: space-between;
+		margin-top: auto;
+		width: 100%;
+
+		.AddTR__button {
+			white-space: nowrap;
+		}
+	}
+}

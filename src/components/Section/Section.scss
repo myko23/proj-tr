@@ -1,0 +1,9 @@
+@use "../../styles/" as *;
+
+.Section {
+	background-color: white;
+	border-radius: 2rem;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	overflow: auto;
+	padding: 1rem 2rem 2rem;
+}

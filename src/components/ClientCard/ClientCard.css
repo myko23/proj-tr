@@ -1,0 +1,29 @@
+.ClientCard {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(168, 168, 168);
+  border-radius: 1rem;
+  padding: 0.5rem 2rem;
+}
+.ClientCard .ClientCard__details {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  overflow: hidden;
+}
+.ClientCard .ClientCard__details .ClientCard__client {
+  font-size: 2rem;
+  white-space: nowrap;
+}
+.ClientCard .ClientCard__details .ClientCard__abv {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+.ClientCard .ClientCard__button {
+  background-color: rgb(225, 225, 225);
+  font-size: 1.2rem;
+}/*# sourceMappingURL=ClientCard.css.map */

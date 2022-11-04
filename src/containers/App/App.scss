@@ -1,0 +1,11 @@
+@use "../../styles/" as *;
+
+.App {
+	background-color: $grey;
+	min-height: 100vh;
+
+	.App__content {
+		@include displayFlex(5rem, column);
+		padding: 5rem;
+	}
+}

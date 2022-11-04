@@ -1,0 +1,19 @@
+@use "../../styles/" as *;
+
+.PrimaryButton {
+	width: fit-content;
+	height: fit-content;
+	padding: 0.2rem 1rem;
+	border-radius: 0.5rem;
+	font-size: 2rem;
+	border: none;
+	font-weight: 1000;
+	text-transform: uppercase;
+	cursor: pointer;
+	background-color: $grey;
+	user-select: none;
+
+	&:hover {
+		background-color: rgb(203, 201, 201);
+	}
+}

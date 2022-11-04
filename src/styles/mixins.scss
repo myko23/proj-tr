@@ -1,0 +1,22 @@
+@mixin displayFlex($gap: 0, $direction: row, $center: none) {
+	display: flex;
+	flex-direction: $direction;
+	gap: $gap;
+	@if $center == center {
+		align-items: center;
+		justify-content: center;
+	}
+}
+@mixin fitBox($screen: "fit") {
+	@if $screen == "screen" {
+		height: 100vh;
+	} @else {
+		height: 100%;
+	}
+
+	width: 100%;
+}
+@mixin squareBox($size) {
+	height: $size;
+	width: $size;
+}
