@@ -1,1 +1,1 @@
-{"version":3,"sources":["App.scss","../../styles/colors.scss","App.css","../../styles/mixins.scss"],"names":[],"mappings":"AAEA;EACC,oCCDM;EDEN,iBAAA;AEDD;AFGC;EGLA,aAAA;EACA,sBHK4B;EGJ5B,SHIsB;EACrB,aAAA;AECF","file":"App.css"}
+{"version":3,"sources":["App.scss","../../styles/colors.scss","App.css","../../styles/mixins.scss"],"names":[],"mappings":"AAEA;EACC,uBCGY;EDFZ,iBAAA;AEDD;AFGC;EGLA,aAAA;EACA,sBHK4B;EGJ5B,SHIsB;EACrB,aAAA;AECF","file":"App.css"}

@@ -10,10 +10,10 @@
 	font-weight: 1000;
 	text-transform: uppercase;
 	cursor: pointer;
-	background-color: $grey;
+	background-color: $accent;
 	user-select: none;
 
 	&:hover {
-		background-color: rgb(203, 201, 201);
+		background-color: $accent;
 	}
 }

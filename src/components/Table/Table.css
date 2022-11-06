@@ -4,14 +4,14 @@
   border-collapse: collapse;
 }
 .Table .Table__header-item {
-  border: 1px solid black;
+  border: #b4b387;
   font-size: 2rem;
   text-transform: uppercase;
   color: white;
 }
 .Table .Table__header-row {
   height: 3rem;
-  background-color: black;
+  background-color: #b4b387;
 }
 .Table .Table__row {
   height: 2rem;
@@ -29,4 +29,5 @@
 .Table .Table__item {
   border: 1px solid black;
   font-size: 1.5rem;
+  white-space: pre-line;
 }/*# sourceMappingURL=Table.css.map */

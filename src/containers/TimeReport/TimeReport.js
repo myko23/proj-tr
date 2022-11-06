@@ -3,6 +3,7 @@ import React from "react";
 import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
 import SectionHeader from "../../components/SectionHeader/SectionHeader";
 import Table from "../../components/Table/Table";
+import useTableSettings from "../../lib/utils/hooks/useTableSettings";
 import "./TimeReport.css";
 
 const TimeReport = ({
@@ -13,6 +14,10 @@ const TimeReport = ({
 	reportSelected,
 	setReportSelect,
 }) => {
+	const data = useTableSettings(timeReportList, [
+		{ timeIn: "Time IN", duration: "Duration" },
+	]);
+
 	const onRemoveReport = () => {
 		const newReportList = _.filter(
 			timeReportList,

@@ -1,7 +1,7 @@
 @use "../../styles/" as *;
 
 .App {
-	background-color: $grey;
+	background-color: $background;
 	min-height: 100vh;
 
 	.App__content {

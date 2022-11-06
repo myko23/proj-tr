@@ -23,6 +23,8 @@ function App() {
 		setClientList(clientData);
 	}, []);
 
+	console.log({ clientList });
+
 	return (
 		<div className="App">
 			<NavBar />
@@ -33,6 +35,7 @@ function App() {
 						setClientList={setClientList}
 					/>
 				</Section>
+				<Section height="40rem"></Section>
 				<Section height="fit-content">
 					<TimeReport
 						timeReportList={timeReportList}
