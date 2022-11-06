@@ -7,20 +7,31 @@
 		@include displayFlex(0, column);
 		align-items: center;
 		width: 35rem;
-		height: 30rem;
+		height: 20rem;
 		border-radius: 2rem;
 		background-color: $primary;
 		box-shadow: $shadow;
-		padding: 1rem;
+		padding: 2rem;
 
-		.UploadScreen__header {
-			font-size: 3rem;
-			text-transform: uppercase;
-			letter-spacing: -2.5px;
+		.UploadScreen__header-container {
+			@include displayFlex(0, column);
+			align-items: center;
+			.UploadScreen__header {
+				font-size: 3rem;
+				text-transform: uppercase;
+				letter-spacing: -2.5px;
+			}
+			.UploadScreen__sub-header {
+				font-size: 1.5rem;
+				font-weight: lighter;
+			}
 		}
-		.UploadScreen__sub-header {
-			font-size: 1.5rem;
-			font-weight: lighter;
+		.UploadScreen__upload-input {
+			text-align: center;
+			margin-top: 2rem;
+		}
+		.UploadScreen__upload-button {
+			margin-top: auto;
 		}
 	}
 }

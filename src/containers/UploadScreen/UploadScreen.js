@@ -5,6 +5,7 @@ import "./UploadScreen.css";
 const UploadScreen = ({ setClientList, setTimeReportList, setUpload }) => {
 	const [clients, setClients] = useState("");
 	const [timereports, setTimeReports] = useState("");
+	const [uploadAllowed, setUploadAllowed] = useState(false);
 
 	const handleChange = (e) => {
 		const fileReader = new FileReader();
@@ -14,32 +15,38 @@ const UploadScreen = ({ setClientList, setTimeReportList, setUpload }) => {
 			setClients(newFile.clients);
 			setTimeReports(newFile.timereports);
 		};
+		setUploadAllowed(true);
 	};
 
 	const handleUpload = () => {
+		if (uploadAllowed === false) return;
+
 		setClientList(clients);
 		setTimeReportList(timereports);
 		setUpload(true);
-	};
-	const handleDownload = () => {
-		const fileData = JSON.stringify({ hey: "Hey" });
-		const blob = new Blob([fileData], { type: "text/plain" });
-		const url = URL.createObjectURL(blob);
-		const link = document.createElement("a");
-		link.download = "timereport.json";
-		link.href = url;
-		link.click();
 	};
 
 	return (
 		<div className="UploadScreen">
 			<div className="UploadScreen__box">
-				<h1 className="UploadScreen__header">Welcome</h1>
-				<h1 className="UploadScreen__sub-header">
-					Please upload given files to get started
-				</h1>
-				<input type="file" accept=".json" onChange={handleChange} />
-				<PrimaryButton onClick={handleUpload}>Upload</PrimaryButton>
+				<div className="UploadScreen__header-container">
+					<h1 className="UploadScreen__header">Welcome</h1>
+					<h2 className="UploadScreen__sub-header">
+						Please upload given files to get started
+					</h2>
+				</div>
+				<input
+					className="UploadScreen__upload-input"
+					type="file"
+					accept=".json"
+					onChange={handleChange}
+				/>
+				<PrimaryButton
+					className="UploadScreen__upload-button"
+					onClick={handleUpload}
+				>
+					Upload
+				</PrimaryButton>
 			</div>
 		</div>
 	);
