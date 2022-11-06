@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import InputWithLabel from "../../components/InputWithLabel/InputWithLabel";
 import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
 import SectionHeader from "../../components/SectionHeader/SectionHeader";
+import { convertDate } from "../../lib/utils/convertDate";
 import { convertTime } from "../../lib/utils/luxonDates";
 import "./AddTR.css";
 
@@ -11,6 +12,7 @@ const AddTR = ({
 	setaddTRModal = () => {},
 	timeReportList,
 	setTimeReportList,
+	datePicked,
 }) => {
 	const [client, setClient] = useState("");
 	const [timeIn, setTimeIn] = useState("10:00");
@@ -29,6 +31,7 @@ const AddTR = ({
 			duration: "NA",
 			client,
 			remarks,
+			date: convertDate(datePicked),
 		};
 		setTimeReportList([...timeReportList, newReport]);
 		setaddTRModal(false);

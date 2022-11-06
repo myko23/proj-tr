@@ -8,6 +8,16 @@
 	text-transform: uppercase;
 	font-size: 2.5rem;
 	@include displayFlex(0, row, center);
+	align-items: center;
 	position: sticky;
 	top: 0;
+	padding-right: 15rem;
+
+	.NavBar__header {
+		margin-left: auto;
+	}
+
+	.NavBar__save {
+		margin-left: auto;
+	}
 }

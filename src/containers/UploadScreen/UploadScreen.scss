@@ -1,0 +1,26 @@
+@use "../../styles/" as *;
+
+.UploadScreen {
+	@include fitBox(screen);
+	@include displayFlex(0, row, center);
+	.UploadScreen__box {
+		@include displayFlex(0, column);
+		align-items: center;
+		width: 35rem;
+		height: 30rem;
+		border-radius: 2rem;
+		background-color: $primary;
+		box-shadow: $shadow;
+		padding: 1rem;
+
+		.UploadScreen__header {
+			font-size: 3rem;
+			text-transform: uppercase;
+			letter-spacing: -2.5px;
+		}
+		.UploadScreen__sub-header {
+			font-size: 1.5rem;
+			font-weight: lighter;
+		}
+	}
+}

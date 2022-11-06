@@ -1,0 +1,11 @@
+.DatePicker {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  align-items: center;
+}
+.DatePicker .DatePicker__date {
+  width: 30rem;
+}/*# sourceMappingURL=DatePicker.css.map */

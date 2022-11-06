@@ -1,1 +1,1 @@
-{"version":3,"sources":["Section.scss","Section.css"],"names":[],"mappings":"AAEA;EACC,uBAAA;EACA,mBAAA;EACA,4CAAA;EACA,cAAA;EACA,uBAAA;ACDD","file":"Section.css"}
+{"version":3,"sources":["Section.scss","../../styles/variables.scss","Section.css"],"names":[],"mappings":"AAEA;EACC,uBAAA;EACA,mBAAA;EACA,4CCLQ;EDMR,cAAA;EACA,uBAAA;AEDD","file":"Section.css"}

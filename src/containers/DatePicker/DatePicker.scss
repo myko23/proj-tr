@@ -1,0 +1,10 @@
+@use "../../styles/" as *;
+
+.DatePicker {
+	@include fitBox();
+	@include displayFlex(3rem, row);
+	align-items: center;
+	.DatePicker__date {
+		width: 30rem;
+	}
+}

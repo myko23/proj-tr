@@ -1,0 +1,30 @@
+.UploadScreen {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  align-items: center;
+  justify-content: center;
+}
+.UploadScreen .UploadScreen__box {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: center;
+  width: 35rem;
+  height: 30rem;
+  border-radius: 2rem;
+  background-color: #b4b387;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 1rem;
+}
+.UploadScreen .UploadScreen__box .UploadScreen__header {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: -2.5px;
+}
+.UploadScreen .UploadScreen__box .UploadScreen__sub-header {
+  font-size: 1.5rem;
+  font-weight: lighter;
+}/*# sourceMappingURL=UploadScreen.css.map */

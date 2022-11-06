@@ -10,7 +10,15 @@
   gap: 0;
   align-items: center;
   justify-content: center;
+  align-items: center;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  padding-right: 15rem;
+}
+.NavBar .NavBar__header {
+  margin-left: auto;
+}
+.NavBar .NavBar__save {
+  margin-left: auto;
 }/*# sourceMappingURL=NavBar.css.map */

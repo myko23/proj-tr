@@ -10,11 +10,14 @@ const Table = ({
 	onRowDoubleClick = () => {},
 }) => {
 	const renderHeader = () => {
-		return headers.map((item) => (
-			<th className="Table__header-item" key={item}>
-				{item}
-			</th>
-		));
+		return headers.map((item, bar) => {
+			if (bar === 0) return null;
+			return (
+				<th className="Table__header-item" key={item}>
+					{item}
+				</th>
+			);
+		});
 	};
 
 	const renderRowData = () => {
@@ -30,13 +33,13 @@ const Table = ({
 					onDoubleClick={onRowDoubleClick}
 				>
 					{Object.values(item).map((foo, bar) => {
-						if (bar !== 0) {
-							return (
-								<td className="Table__item" key={bar}>
-									{foo}
-								</td>
-							);
-						} else return null;
+						if (bar === 0) return null;
+
+						return (
+							<td className="Table__item" key={bar}>
+								{foo}
+							</td>
+						);
 					})}
 				</tr>
 			);

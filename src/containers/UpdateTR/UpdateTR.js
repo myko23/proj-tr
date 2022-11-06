@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import InputWithLabel from "../../components/InputWithLabel/InputWithLabel";
 import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
 import SectionHeader from "../../components/SectionHeader/SectionHeader";
+import { convertDate } from "../../lib/utils/convertDate";
 import { diffTime } from "../../lib/utils/diffTime";
 import { convertTime } from "../../lib/utils/luxonDates";
 import "./UpdateTR.css";
@@ -13,6 +14,7 @@ const UpdateTR = ({
 	setUpdateTRModal = () => {},
 	timeReportList,
 	reportSelected,
+	datePicked,
 }) => {
 	const [client, setClient] = useState("");
 	const [timeIn, setTimeIn] = useState("10:00");
@@ -48,6 +50,7 @@ const UpdateTR = ({
 		timeReportList[index].duration = duration;
 		timeReportList[index].client = client;
 		timeReportList[index].remarks = remarks;
+		timeReportList[index].date = convertDate(datePicked);
 
 		setUpdateTRModal(false);
 	};

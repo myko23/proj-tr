@@ -3,7 +3,8 @@ import React from "react";
 import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
 import SectionHeader from "../../components/SectionHeader/SectionHeader";
 import Table from "../../components/Table/Table";
-import useTableSettings from "../../lib/utils/hooks/useTableSettings";
+import useTableSettings from "../../lib/hooks/useTableSettings";
+import { convertDate } from "../../lib/utils/convertDate";
 import "./TimeReport.css";
 
 const TimeReport = ({
@@ -13,10 +14,20 @@ const TimeReport = ({
 	setUpdateTRModal,
 	reportSelected,
 	setReportSelect,
+	datePicked,
+	allTimeReportList,
 }) => {
-	const data = useTableSettings(timeReportList, [
-		{ timeIn: "Time IN", duration: "Duration" },
-	]);
+	const timeListConfigs = useTableSettings(
+		timeReportList,
+		{
+			timeIn: "Time IN",
+			timeOut: "Time Out",
+			duration: "Duration",
+			client: "Clients",
+			remarks: "Remarks",
+		},
+		{}
+	);
 
 	const onRemoveReport = () => {
 		const newReportList = _.filter(
@@ -47,7 +58,11 @@ const TimeReport = ({
 				<PrimaryButton
 					className="TimeReport__button"
 					onClick={() => {
-						setTimeReportList([]);
+						const newList = _.filter(
+							allTimeReportList,
+							(item) => item.date !== convertDate(datePicked)
+						);
+						setTimeReportList(newList);
 					}}
 				>
 					Remove All
@@ -58,14 +73,8 @@ const TimeReport = ({
 					onRowDoubleClick={() => setUpdateTRModal(true)}
 					selected={reportSelected}
 					onRowClick={setReportSelect}
-					data={_.orderBy(timeReportList, ["timeIn"], ["asc"])}
-					headers={[
-						"Time In",
-						"Time Out",
-						"Duration",
-						"Client",
-						"Remarks",
-					]}
+					data={timeListConfigs.data}
+					headers={timeListConfigs.headers}
 				/>
 			</div>
 		</div>

@@ -65,6 +65,15 @@ const InputWithLabel = ({
 						onChange={setValue}
 					/>
 				);
+			case "date":
+				return (
+					<input
+						value={value}
+						onChange={(e) => setValue(e.target.value)}
+						type="date"
+						className="InputWithLabel__input"
+					/>
+				);
 			default:
 				return (
 					<input

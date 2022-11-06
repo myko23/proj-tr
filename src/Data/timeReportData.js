@@ -6,6 +6,7 @@ export const timeReportData = [
 		duration: "1 hour, 0 min",
 		client: "Angel Accessories",
 		remarks: "VAT Exemption",
+		date: "11-07-2022",
 	},
 	{
 		id: 2,
@@ -14,6 +15,7 @@ export const timeReportData = [
 		duration: "1 hour, 0 min",
 		client: "Angel Accessories",
 		remarks: "VAT Exemption",
+		date: "11-07-2022",
 	},
 	{
 		id: 3,
@@ -22,6 +24,7 @@ export const timeReportData = [
 		duration: "1 hour, 0 min",
 		client: "Angel Accessories",
 		remarks: "VAT Exemption",
+		date: "11-07-2022",
 	},
 	{
 		id: 4,
@@ -30,6 +33,7 @@ export const timeReportData = [
 		duration: "1 hour, 0 min",
 		client: "Angel Accessories",
 		remarks: "VAT Exemption",
+		date: "11-07-2022",
 	},
 	{
 		id: 5,
@@ -38,5 +42,6 @@ export const timeReportData = [
 		duration: "1 hour, 0 min",
 		client: "Angel Accessories",
 		remarks: "VAT Exemption",
+		date: "11-07-2022",
 	},
 ];
