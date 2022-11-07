@@ -1,0 +1,7 @@
+@use "../../styles/" as *;
+
+.LoadingScreen {
+	@include fitBox();
+	@include displayFlex(0, row, center);
+	background-color: $primary;
+}

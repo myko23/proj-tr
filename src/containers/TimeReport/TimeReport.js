@@ -1,10 +1,10 @@
-import _ from "lodash";
 import React from "react";
 import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
 import SectionHeader from "../../components/SectionHeader/SectionHeader";
 import Table from "../../components/Table/Table";
+import { useDeleteTimeReportsMutation } from "../../lib/api/api";
 import useTableSettings from "../../lib/hooks/useTableSettings";
-import { convertDate } from "../../lib/utils/convertDate";
+import LoadingScreen from "../LoadingScreen/LoadingScreen";
 import "./TimeReport.css";
 
 const TimeReport = ({
@@ -17,6 +17,8 @@ const TimeReport = ({
 	datePicked,
 	allTimeReportList,
 }) => {
+	const deleteReport = useDeleteTimeReportsMutation();
+
 	const timeListConfigs = useTableSettings(
 		timeReportList,
 		{
@@ -29,12 +31,12 @@ const TimeReport = ({
 		{}
 	);
 
-	const onRemoveReport = () => {
-		const newReportList = _.filter(
-			timeReportList,
-			(item) => item.id !== reportSelected
-		);
-		setTimeReportList(newReportList);
+	const onRemoveReport = async () => {
+		try {
+			await deleteReport.mutateAsync(reportSelected);
+		} catch (err) {
+			console.log(err.message);
+		}
 	};
 
 	return (
@@ -55,7 +57,7 @@ const TimeReport = ({
 				>
 					Remove
 				</PrimaryButton>
-				<PrimaryButton
+				{/* <PrimaryButton
 					className="TimeReport__button"
 					onClick={() => {
 						const newList = _.filter(
@@ -66,16 +68,20 @@ const TimeReport = ({
 					}}
 				>
 					Remove All
-				</PrimaryButton>
+				</PrimaryButton> */}
 			</div>
 			<div className="TimeReport__table-container">
-				<Table
-					onRowDoubleClick={() => setUpdateTRModal(true)}
-					selected={reportSelected}
-					onRowClick={setReportSelect}
-					data={timeListConfigs.data}
-					headers={timeListConfigs.headers}
-				/>
+				{deleteReport.isLoading ? (
+					<LoadingScreen />
+				) : (
+					<Table
+						onRowDoubleClick={() => setUpdateTRModal(true)}
+						selected={reportSelected}
+						onRowClick={setReportSelect}
+						data={timeListConfigs.data}
+						headers={timeListConfigs.headers}
+					/>
+				)}
 			</div>
 		</div>
 	);

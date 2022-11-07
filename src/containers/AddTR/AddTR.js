@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import InputWithLabel from "../../components/InputWithLabel/InputWithLabel";
 import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
 import SectionHeader from "../../components/SectionHeader/SectionHeader";
+import { useAddTimeReportsMutation } from "../../lib/api/api";
 import { convertDate } from "../../lib/utils/convertDate";
 import { convertTime } from "../../lib/utils/luxonDates";
 import "./AddTR.css";
@@ -14,6 +15,8 @@ const AddTR = ({
 	setTimeReportList,
 	datePicked,
 }) => {
+	const addTimeReports = useAddTimeReportsMutation();
+
 	const [client, setClient] = useState("");
 	const [timeIn, setTimeIn] = useState("10:00");
 	const [remarks, setRemarks] = useState("");
@@ -23,9 +26,8 @@ const AddTR = ({
 		setTimeIn(convertTime(DateTime.now()));
 	}, [clientList]);
 
-	const addTRButton = () => {
+	const addTRButton = async () => {
 		const newReport = {
-			id: timeReportList[timeReportList.length - 1]?.id + 1 || 0,
 			timeIn,
 			timeOut: "NA",
 			duration: "NA",
@@ -33,8 +35,13 @@ const AddTR = ({
 			remarks,
 			date: convertDate(datePicked),
 		};
-		setTimeReportList([...timeReportList, newReport]);
-		setaddTRModal(false);
+
+		try {
+			await addTimeReports.mutateAsync(newReport);
+			setaddTRModal(false);
+		} catch (err) {
+			return console.log(err.message);
+		}
 	};
 
 	return (

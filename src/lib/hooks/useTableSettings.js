@@ -1,9 +1,9 @@
 import _ from "lodash";
 
-const cl = (data) => {
-	console.log(`TABLE SETTINGS`);
-	console.log(data);
-};
+// const cl = (data) => {
+// 	console.log(`TABLE SETTINGS`);
+// 	console.log(data);
+// };
 
 const useTableSettings = (data, headers, configs) => {
 	const newHeaders = ["id", ...Object.keys(headers)];

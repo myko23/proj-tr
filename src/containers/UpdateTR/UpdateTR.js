@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import InputWithLabel from "../../components/InputWithLabel/InputWithLabel";
 import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
 import SectionHeader from "../../components/SectionHeader/SectionHeader";
+import { useUpdateTimeReportsMutation } from "../../lib/api/api";
 import { convertDate } from "../../lib/utils/convertDate";
 import { diffTime } from "../../lib/utils/diffTime";
 import { convertTime } from "../../lib/utils/luxonDates";
@@ -16,6 +17,8 @@ const UpdateTR = ({
 	reportSelected,
 	datePicked,
 }) => {
+	const updateReport = useUpdateTimeReportsMutation();
+
 	const [client, setClient] = useState("");
 	const [timeIn, setTimeIn] = useState("10:00");
 	const [timeOut, setTimeOut] = useState("10:00");
@@ -54,18 +57,25 @@ const UpdateTR = ({
 
 		setUpdateTRModal(false);
 	};
-	const onTimeOutAuto = () => {
-		const index = _.findIndex(
-			timeReportList,
-			(item) => item.id === reportSelected
-		);
-		timeReportList[index].timeIn = timeIn;
-		timeReportList[index].timeOut = convertTime(DateTime.now());
-		timeReportList[index].duration = duration;
-		timeReportList[index].client = client;
-		timeReportList[index].remarks = remarks;
+	const onTimeOutAuto = async () => {
+		const timeReportObj = {
+			id: reportSelected,
+			content: {
+				timeIn,
+				timeOut: convertTime(DateTime.now()),
+				duration,
+				client,
+				remarks,
+				date: convertDate(datePicked),
+			},
+		};
 
-		setUpdateTRModal(false);
+		try {
+			await updateReport.mutateAsync(timeReportObj);
+			setUpdateTRModal(false);
+		} catch (err) {
+			console.log(err.message);
+		}
 	};
 
 	return (

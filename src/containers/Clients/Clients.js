@@ -1,21 +1,25 @@
-import _ from "lodash";
 import React, { useState } from "react";
 import ClientCard from "../../components/ClientCard/ClientCard";
 import InputWithLabel from "../../components/InputWithLabel/InputWithLabel";
 import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
 import SectionHeader from "../../components/SectionHeader/SectionHeader";
+import { useDeleteClientsMutation } from "../../lib/api/api";
+import LoadingScreen from "../LoadingScreen/LoadingScreen";
 import "./Clients.css";
 
 const Clients = ({ clientList, setClientList }) => {
+	const deleteClient = useDeleteClientsMutation();
 	const [errorMessage, setErrorMessage] = useState("");
 	const [company, setCompany] = useState("");
 	const [abv, setAbv] = useState("");
 
-	const onRemoveClient = (id) => {
-		const newList = _.filter(clientList, (item) => item.id !== id);
-		setClientList(newList);
+	const onRemoveClient = async (id) => {
+		try {
+			await deleteClient.mutateAsync(id);
+		} catch (err) {
+			console.log(err.message);
+		}
 	};
-
 	const renderClientCards = () => {
 		return clientList.map((item) => {
 			return (
@@ -30,20 +34,20 @@ const Clients = ({ clientList, setClientList }) => {
 		});
 	};
 
-	const onAddClick = () => {
+	const onAddClick = async () => {
 		if (company === "" || abv === "") {
 			return setErrorMessage("Please fill in the fields");
 		}
 
 		const newClient = {
-			id: clientList[clientList.length - 1]?.id + 1 || 0,
 			client: company,
 			abv,
 		};
-
-		const newClientList = [...clientList, newClient];
-
-		setClientList(newClientList);
+		try {
+			await setClientList.mutateAsync(newClient);
+		} catch (err) {
+			console.log(err.message);
+		}
 
 		setCompany("");
 		setAbv("");
@@ -78,7 +82,11 @@ const Clients = ({ clientList, setClientList }) => {
 					)}
 				</div>
 				<div className="Clients__client-form">
-					{renderClientCards()}
+					{deleteClient.isLoading || setClientList.isLoading ? (
+						<LoadingScreen />
+					) : (
+						renderClientCards()
+					)}
 				</div>
 			</div>
 		</div>

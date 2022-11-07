@@ -13,6 +13,7 @@ const ClientCard = ({
 			<div className="ClientCard__details">
 				<h1 className="ClientCard__client">{client}</h1>
 				<h2 className="ClientCard__abv">{abv}</h2>
+				<p></p>
 			</div>
 			<PrimaryButton onClick={onRemove} className="ClientCard__button">
 				Remove
