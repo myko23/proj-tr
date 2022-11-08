@@ -14,9 +14,6 @@ const NavBar = ({ timeReportList, clientList }) => {
 	return (
 		<div className="NavBar">
 			<h1 className="NavBar__header">Time Report</h1>
-			<PrimaryButton className="NavBar__save" onClick={handleSave}>
-				Save Data
-			</PrimaryButton>
 		</div>
 	);
 };
